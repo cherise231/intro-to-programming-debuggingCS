@@ -57,13 +57,14 @@ function checkGuess() {
     numberOfGuessesMessage.style.display = "block";
     numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> 
     You have ${remainingAttempts}
-    ${remainingAttempts === 1 ? 'guess' :  'guesses'} remaining`;
-
+    ${remainingAttempts === 1 ? "guess" : "guesses"} remaining`;
   }
 
   if (attempts === maxNumberOfAttempts) {
     submitButton.disabled = true;
     guessInput.disabled = true;
+    maxGuessesMessage.style.display = "block";
+    maxGuessesMessage.innerHTML = "0 guesses remaining";
   }
 
   guessInput.value = "";
@@ -84,7 +85,7 @@ function setup() {
 
   // Reset number of attempts
   // maxNumberOfAttempts = 0;
-   attempts = 0;
+  attempts = 0;
 
   // Enable the input and submit button
   submitButton.disabled = false;
@@ -92,6 +93,8 @@ function setup() {
 
   hideAllMessages();
   resetButton.style.display = "none";
+
+  guessInput.value = "";
 }
 
 submitButton.addEventListener("click", checkGuess);
