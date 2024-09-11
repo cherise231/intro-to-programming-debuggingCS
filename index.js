@@ -39,7 +39,7 @@ function checkGuess() {
     numberOfGuessesMessage.style.display = "";
     numberOfGuessesMessage.innerHTML = `You made ${attempts} guesses`;
 
-    correctMessage.style.display = "";
+    correctMessage.style.display = "block";
 
     submitButton.disabled = true;
     guessInput.disabled = true;
@@ -47,14 +47,14 @@ function checkGuess() {
 
   if (guess !== targetNumber) {
     if (guess < targetNumber) {
-      tooLowMessage.style.display = "";
+      tooLowMessage.style.display = "block";
     } else {
-      tooHighMessage.style.display = "";
+      tooHighMessage.style.display = "block";
     }
 
     const remainingAttempts = maxNumberOfAttempts - attempts;
 
-    numberOfGuessesMessage.style.display = "";
+    numberOfGuessesMessage.style.display = "block";
     numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> 
     You have ${remainingAttempts}
     ${remainingAttempts === 1 ? 'guess' :  'guesses'} remaining`;
@@ -68,7 +68,7 @@ function checkGuess() {
 
   guessInput.value = "";
 
-  resetButton.style.display = "";
+  resetButton.style.display = "block";
 }
 
 function hideAllMessages() {
