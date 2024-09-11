@@ -8,6 +8,7 @@ const maxGuessesMessage = document.getElementById("max-guesses");
 const numberOfGuessesMessage = document.getElementById("number-of-guesses");
 const correctMessage = document.getElementById("correct");
 
+
 let targetNumber;
 let attempts = 0;
 let maxNumberOfAttempts = 5;
@@ -95,6 +96,13 @@ function setup() {
   resetButton.style.display = "none";
 
   guessInput.value = "";
+
+  tooHighMessage.style.display = "none";
+  tooLowMessage.style.display = "none";
+  maxGuessesMessage.style.display = "none";
+  numberOfGuessesMessage.style.display = "none";
+  correctMessage.style.display = "none";
+ 
 }
 
 submitButton.addEventListener("click", checkGuess);
